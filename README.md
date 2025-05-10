@@ -11,18 +11,6 @@ Pedagogical yet surprisingly fast SAT toolkit
 
 ---
 
-## Quick install
-
-```bash
-git clone https://github.com/GheorgheLuca1/SAT-Helper.git
-cd SAT-Helper
-python --version     # 3.8 or newer
-```
-
-> No `pip install …` needed – everything is standard-library.
-
----
-
 ## 1 · Detailed guide: `sat_solver_fast.py`
 
 ### 1.1 Create `clauses.csv`
@@ -134,26 +122,5 @@ TIMEOUT      = 20                    # seconds per (file, solver)
 
 Add industrial problems by copying DIMACS `.cnf` (or space-separated
 `.csv`) into `bench/` before running – they will be included automatically.
-
----
-
-## 3 · Re-generating LaTeX tables / plots
-
-1. Run `make_benchmarks.py`.  
-2. Use **`bench/results.txt`** to fill tables in your paper.  
-3. For plots, either:
-
-   * open the TXT in Excel / LibreOffice Calc, or  
-   * include with PGFPlots:
-
-     ```latex
-     \pgfplotstabletypeset[
-       columns={solver,time},
-       col sep=space
-     ]{bench/results.txt}
-     ```
-
-*(If you install Matplotlib, the optional `run_benchmarks.py` script can
-output ready-made PDF plots.)*
 
 ---
